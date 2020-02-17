@@ -1,0 +1,59 @@
+css-----
+
+.menuSlide {max-width:1440px;margin:100px auto 0; overflow:hidden;background: #454fb7;}
+.menuSlide .slick-slide a {display: block;text-align: center;padding-left: 49px;line-height: 60px;}
+.menuSlide .slick-slide a span {font-size: 16px;color: #fff;font-weight: 500;display: inline-block;}
+.menuSlide .slick-slide a span:after {content: "";display: inline-block;width: 1px;height: 16px;background: #6a72c5;vertical-align: middle;margin-left: 48px;}
+
+
+html----
+
+<div class="menuSlide">
+		<div><a href="javascript:;"><span>전체</span></a></div>
+		<div><a href="javascript:;"><span>리더쉽</span></a></div>
+		<div><a href="javascript:;"><span>조직활성화</span></a></div>
+		<div><a href="javascript:;"><span>비즈니스</span></a></div>
+		<div><a href="javascript:;"><span>CS</span></a></div>
+		<div><a href="javascript:;"><span>사내강사 역량강화</span></a></div>
+		<div><a href="javascript:;"><span>인문학</span></a></div>
+		<div><a href="javascript:;"><span>강사양성</span></a></div>
+		<div><a href="javascript:;"><span>보이스&스피치</span></a></div>
+	</div>
+  
+  js-----
+  
+  //menuSlide
+var menuSlide = function(){
+	$menuElement = $('.menuSlide');
+	$menuElement.slick({
+		infinite: false,
+		variableWidth: false,
+		autoplay: false,
+		fade: false,
+		dots: false,
+			swipeToSlide: true,
+		arrows: false,
+		variableWidth: true,
+		slidesToShow: 9,
+		responsive: [
+			{
+			  breakpoint: 1440,
+			  settings: {
+				slidesToShow: 3
+			  }
+			},
+			{
+			  breakpoint: 940,
+			  settings: {
+				slidesToShow: 2
+			  }
+			},
+			{
+			  breakpoint: 540,
+			  settings: {
+				slidesToShow: 1
+				}
+			}
+		]
+	});
+}; menuSlide();
